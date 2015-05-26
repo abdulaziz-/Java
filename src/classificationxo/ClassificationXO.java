@@ -51,7 +51,6 @@ public class ClassificationXO {
             if(player == 0) 
             {
                 System.out.println("\nPlayer one turn!");
-                Thread.sleep(5000);
                 while (!b.isFieldFilled(shot)) 
                 {
                     b.play(shot, 'X');
@@ -72,7 +71,6 @@ public class ClassificationXO {
             else if(player == 1)
             {
                 System.out.println("\nPlayer two turn!");
-                Thread.sleep(5000);
                 shot = d.whereToPlay(b.getByteArray());
                 while (!b.isFieldFilled(shot))
                 {
