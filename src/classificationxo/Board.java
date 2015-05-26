@@ -16,7 +16,6 @@ public class Board {
     private static byte countFull = 9;
     private final char charr = '-';
     private byte location = 0, i = 0;
-    private int forGit = 0;
     
     
     public Board()
