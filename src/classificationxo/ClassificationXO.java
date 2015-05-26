@@ -71,7 +71,7 @@ public class ClassificationXO {
             else if(player == 1)
             {
                 System.out.println("\nPlayer two turn!");
-                shot = d.whereToPlay(b.getByteArray());
+                //shot = d.whereToPlay(b.getByteArray());
                 while (!b.isFieldFilled(shot))
                 {
                     b.play(shot, 'Y');
