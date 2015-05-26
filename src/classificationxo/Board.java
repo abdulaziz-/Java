@@ -12,12 +12,13 @@ package classificationxo;
  */
 public class Board {
     
-    private static char [] boardArray;
-    private static byte countFull = 9;
+    private static char [] boardArray; // a one diemenson array that represents the tic tac toe board
+    private static byte countFull = 9; // a parameter that is ueed to indicate the status of the board (filled completely or not)
     private final char charr = '-';
     private byte location = 0, i = 0;
     
     
+    // initializing the board
     public Board()
     {
         boardArray = new char[9];
@@ -27,10 +28,6 @@ public class Board {
         }
     }
     
-    public Board(int i)
-    {
-        
-    }
     
     public char [] getByteArray()
     {
@@ -48,7 +45,7 @@ public class Board {
     
     public boolean playerWon(char turn)
     {
-        // Horizontal
+        // Horizontal check 
         for(i=0; i <7; )
         {
             location = i;
