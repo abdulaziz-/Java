@@ -9,7 +9,8 @@ package classificationxo;
 import java.util.Random;
 
 /**
- *
+ * This class will be used to help the computer's user selects the best move or location to play using artificial intelligence & classification technique
+ * The program will collect winning patterns and apply the choice to one of 8 classes (0,1,2,3,..8)
  * @author Azeez
  */
 public class Decide {
