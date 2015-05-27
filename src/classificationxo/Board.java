@@ -31,7 +31,7 @@ public class Board {
     
     public char [] getByteArray()
     {
-        return this.boardArray;
+        return Board.boardArray;
     }
     
     public void print()
@@ -45,6 +45,7 @@ public class Board {
     
     public boolean playerWon(char turn)
     {
+        // This function determines if a player won the match or not in O(7) time
         // Horizontal check 
         for(i=0; i <7; )
         {
@@ -69,32 +70,28 @@ public class Board {
             if(boardArray[location + 2] == turn && boardArray[location + 6] == boardArray[location + 4] && boardArray[location + 4] == boardArray[location + 2]) { return true; }
             else break;
         }
-        
         return false;
     }
     
     public boolean isFieldFilled(byte x)
     {
-        if(boardArray[x] == charr) return false;
-        return true;
+        return boardArray[x] != charr;
     }
     
     public void play(byte x, char turn)
     {
         boardArray[x] = turn;
-        countFull--;
+        countFull--; // added to improve the isFull function from O(N) to O(1)
     }
     
     public boolean isFull()
     {
         /*for(i=0; i < boardArray.length; i++ ){
-            if(boardArray[i] == ' ')
-                return false;
+        if(boardArray[i] == ' ')
+        return false;
         }
-        return true;*/
-        if(countFull == 0)
-            return true;
-        else return false;
+        return true;*/ 
+        return Board.countFull == 0;
     }
     
 }
