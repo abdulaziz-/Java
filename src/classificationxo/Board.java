@@ -12,8 +12,9 @@ package classificationxo;
  */
 public class Board {
     
-    private static char [] boardArray; // a one diemenson array that represents the tic tac toe board
-    private static byte countFull = 9; // a parameter that is ueed to indicate the status of the board (filled completely or not)
+    private static final int size = 9; // the size of the board
+    private static char [] boardArray = new char[size]; // a one diemenson array that represents the tic tac toe board
+    private static byte countFull = size; // a parameter that is ueed to indicate the status of the board (filled completely or not)
     private final char charr = '-';
     private byte location = 0, i = 0;
     
@@ -21,7 +22,6 @@ public class Board {
     // initializing the board
     public Board()
     {
-        boardArray = new char[9];
         for(i=0;i<boardArray.length; i++)
         {
             boardArray[i] = charr;
@@ -36,7 +36,7 @@ public class Board {
     
     public void print()
     {
-        for(i=1; i<=boardArray.length; i++)
+        for(i=1; i<=size; i++)
         {
             System.out.print(" | " + boardArray[i-1] + " | ");
             if(i % 3 == 0) System.out.println();

@@ -13,7 +13,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,14 +55,14 @@ public class ClassificationXO {
                 while (!b.isFieldFilled(shot)) 
                 {
                     b.play(shot, 'X');
-                    bw1.append(shot + "->");
+                    bw1.append(shot + ",");
                     if(b.playerWon('X')) 
                     { 
                         
                         bw1.append("won\n"); bw1.newLine();b.print();bw1.newLine(); bw1.close(); bw2.close();
                         long timeEnd = System.currentTimeMillis();
                         System.out.println("Time took: " + (timeEnd - timeStart));
-                        JOptionPane.showMessageDialog(null, "Player 1 WON!");
+                        System.out.println("Player 1 WON");
                         return; 
                     }
                     else { bw1.append("\n");}
@@ -77,13 +76,13 @@ public class ClassificationXO {
                 while (!b.isFieldFilled(shot))
                 {
                     b.play(shot, 'Y');
-                    bw2.append(shot + "->");
+                    bw2.append(shot + ",");
                     if(b.playerWon('Y')) { 
                         
                         bw2.append("won\n"); bw2.newLine(); b.print(); bw1.close(); bw2.close(); 
                         long timeEnd = System.currentTimeMillis();
                         System.out.println("Time took: " + (timeEnd - timeStart));
-                        JOptionPane.showMessageDialog(null, "Player 2 WON!");
+                        System.out.println("Player 2 WON");
                         return; 
                     }
                     else { bw2.append("\n");}
@@ -94,13 +93,13 @@ public class ClassificationXO {
             
             if(b.isFull())
             {
-                //System.out.println("Game was a draw!");
-                JOptionPane.showMessageDialog(null, "The game was a draw!");
                 b.print();
                 long timeEnd = System.currentTimeMillis();
                 System.out.println("Time took: " + (timeEnd - timeStart));
-                bw1.append("\ndraw\n");
-                bw2.append("\ndraw\n");
+                System.out.println("Game was a draw!");
+                bw1.append("draw \n");
+                bw2.append("draw \n");
+                bw1.newLine(); bw2.newLine();
                 bw1.close();
                 bw2.close();
                 break;
